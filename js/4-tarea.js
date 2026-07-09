@@ -8,7 +8,23 @@ Objetivo: Manejo de acumuladores con condiciones de salida basadas en metas.*/
 
 
 
+//declaro valores
+let total = 0;
+let objetivo = 1000;
 
+//le pide al usuiario que ingrese monto 
+while (total < objetivo) {
+    let ingreso = Numer(prompt("Ingrese un monto de dinero:"));
+//al ingresar numero negativo muestra monto invalido
+    if (ingreso < 0){
+        console.log("Monto invalido. No se permiten valores negativos.");
+    } else {
+ //continua sumando hasta alcanzar objetivo o superarlo       
+        total += ingreso;
+        console.log("Total acumulado: $" + total);
+    } 
+}
+console.log("¡objetivo alcanzado! Se alcanzo un total de $" + total)
 
 
 
@@ -28,7 +44,17 @@ Desafío lógico: El bucle externo controla las filas y el interno controla cuá
 Objetivo: Dominar la complejidad de los bucles anidados, fundamental para entender estructuras de datos complejas en el futuro. 
 */
 
+//declaro mis filas
+for (let fila = 1; fila <= 5; fila++) {
+    let triangulo = "";
 
+    //declaro mis columnas
+    for (let columna = 1; columna <= fila; columna++) {
+        triangulo += "*";
+    }
+    //imprime mi triangulo en ***
+    console.log(triangulo);
+}
 
 
 
@@ -43,6 +69,27 @@ Desafío lógico: Usa un contador que aumente con cada intento fallido y un whil
 */
 
 
+//declaro codigo y intentos
+let codigoCorrecto = "12345" ;
+let codigoIncorrecto = "" ;
+let intentos = 0;
+
+//pide al usuario ingresar el codigo
+while (codigoIngresado !== codigoCorrecto && intentos < 3) {
+    codigoIngresado = prompt("Ingrese el codigo de autenticacion:");
+//al ser incorrecoto da otros intentos
+    if(codigoIngresado !== codigoCorrecto) {
+        intentos++;
+        console.log("Codigo incorrecto.");
+        console.log("intentos restantes: " + (3 - intentos));
+    }
+}
+//cuando acierta el codigo imprime exito o si no el bloqueo
+    if (codigoIngresado === codigoCorrecto) {
+        console.log("¡Autenticacion exitosa! Acceso permitido.");
+    } else {
+        console.log("Acceso bloqueado. Se alcanzo el maximo de intentos.");
+    }
 
 
 
@@ -58,6 +105,25 @@ Desafío lógico: ¿Qué pasa si el usuario ingresa un valor negativo? El progra
 
 
 
+//horas total 0
+let totalHoras = 0;
+ //ingresar horas 
+for (let dia = 1; dia <= 7; dia++) {
+    let horas = Number(prompt("Ingrese las horas de estudio del dia " + dia + ":"));
+//valor negativo error 
+    while (horas < 0) {
+        alert("Valor invalido. Ingrese un numero mayor o igual a 0.");
+    horas = number(prompt("Ingrese nuevamente las horas de estudio del dia " + dia + ":"));
+}
+//total de horas
+totalHoras += horas;
+}
+//promedio de horas por dia 
+let promedio =totalHoras / 7;
+
+console.log("Total de horas estudiadas: " + totalHoras);
+console.log("Promedio diario: " + promedio.toFixed(2) + " horas");
+
 
 
 
@@ -70,5 +136,31 @@ Consigna: El usuario comienza con un producto. El programa debe preguntar el pre
 Desafío lógico: Debes llevar un control del total acumulado en cada iteración y aplicar el descuento solo una vez al final, antes de imprimir el resultado.
 */ 
 
+//declaro bariables 
+let total = 0;
+let continuar = "si";
 
+//ingresar precio de producto
+while (continuar.toLowerCase() === "si") {
+    let precio = Number(prompt("Ingrese el precio del producto:"));
 
+    if (precio >= 0) {
+        total += precio;
+        console.log("Total acumulado: $" + total);
+    } else {
+        console.log("Precio invalido.");
+    }
+//pregunta si desea continuar comprando
+
+    continuar = prompt("Desea agregar otro producto? (si/no)");
+}
+
+//para aplicar descuento solo al finalizar
+
+if (total > 5000) {
+    console.log("Has obtenido un descuento de 10%");
+    total = total * 0.90;
+}
+
+//muestra precio total con descuento
+console.log("total a pagar: $" + total.toFixed(2));
