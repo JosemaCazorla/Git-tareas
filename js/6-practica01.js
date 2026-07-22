@@ -2,7 +2,6 @@
 /* Ejercicios de Lógica y Algoritmos*/
 
 
-
 /* 1. El Buscador de Valores Únicos (for)
 
 Tienes un array con números repetidos. Crea un nuevo array llamado `unicos` que contenga cada número del original, pero **sin repeticiones**.
