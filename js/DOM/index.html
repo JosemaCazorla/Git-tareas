@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DOM</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="switchCheckChecked"
+                  />
+                  <label class="form-check-label" for="switchCheckChecked"
+                    ><i class="bi bi-moon"></i
+                  ></label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="position-relative">
+        <picture>
+          <img
+            src="./assets/imagen.jpg"
+            alt="persona con dos monitores programando"
+          />
+        </picture>
+        <div class="overlay">
+          <h1>DOCUMENT OBJECT MODEL</h1>
+          <p>Aprendé a dominar el contenido web</p>
+          <p>Pasá de ser maquetador a programador</p>
+        </div>
+      </section>
+      <section class="container" id="anatomia">
+        <div class="row">
+          <div class="col text-center my-3">
+            <h3 class="fs-1">Anatomía de los Nodos</h3>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <div class="d-flex justify-content-center">
+                <i class="bi bi-javascript text-warning"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Nodos de elementos</h5>
+                <p class="card-text" id="card-text-1">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card’s content.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button
+                  class="btn btn-warning"
+                  onclick="cambiarTexto(textoCard1)"
+                >
+                  Cambiar texto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <div class="d-flex justify-content-center">
+                <i class="bi bi-cursor-text"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Nodos de texto</h5>
+                <p class="card-text" id="card-text-2">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card’s content.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button
+                  class="btn btn-warning"
+                  onclick="cambiarTexto(textoCard2)"
+                >
+                  Cambiar texto
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <div class="d-flex justify-content-center">
+                <i class="bi bi-chat-text text-warning"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Nodos de comentarios</h5>
+                <p class="card-text" id="card-text-3">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card’s content.
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <button
+                  class="btn btn-warning"
+                  onclick="cambiarTexto(textoCard3)"
+                >
+                  Cambiar texto
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="row text-center">
+          <div class="col">
+            <h3 class="fs-1">La matriz de selectores</h3>
+            <div class="my-3">
+              <button id="dangerBtn" class="btn btn-danger">
+                Eliminar Tabla
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <table class="table table-striped">
+            <thead>
+              <tr class="text-center fs-5">
+                <th>Selector</th>
+                <th>Sintaxis</th>
+                <th>Devuelve</th>
+              </tr>
+            </thead>
+            <tbody id="body-table">
+              <!-- construir el cuerpo -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

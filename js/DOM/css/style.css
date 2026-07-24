@@ -1,0 +1,57 @@
+picture {
+  width: 100vw;
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: grayscale(0.8);
+  }
+}
+
+.overlay {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.413);
+  position: absolute;
+  inset: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  h1 {
+    font-size: 80px;
+  }
+  p {
+    font-size: 40px;
+    margin: 0;
+  }
+}
+
+#anatomia {
+  margin-bottom: 50px;
+  .card-body {
+    padding-top: 0;
+    text-align: center;
+  }
+  i {
+    font-size: 80px;
+  }
+}
+
+.dark-mode {
+  background-color: #121212;
+
+  .card {
+    background-color: #1e1e1e;
+    color: #dedede !important;
+  }
+  .navbar {
+    background-color: #1e1e1e !important;
+  }
+  .navbar-brand,
+  .nav-link,
+  .container {
+    color: #dedede !important;
+  }
+}
