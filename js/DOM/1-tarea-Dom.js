@@ -4,7 +4,6 @@ Aquí tienes el template y los desafíos.
 
 1. Template HTML (Bootstrap 5)
 Este es el esqueleto base que deben usar. Ya tiene el CDN de Bootstrap incluido.
-
 2. Desafíos Prácticos (Tareas para los alumnos)
 
 
@@ -53,3 +52,5 @@ Tip: Usa un if para comprobar si inputTarea.value.trim() !== "" antes de ejecuta
 /*Tarea 6: Estilos Dinámicos (Modo "Prioridad")
 Enunciado: Agrega un segundo botón llamado "Prioridad". Al hacer clic en una tarea, esta debe cambiar su color de fondo (usando .classList.add('bg-warning')).
 Tip: Puedes alternar clases usando classList.toggle('bg-warning') dentro de un evento click sobre cada li generado.*/
+
+
